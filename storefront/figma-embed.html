@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond The Wall — Figma Design Preview | DarkLab</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ice: #a8d8ea;
+      --deep-blue: #0a1628;
+      --mid-blue: #112240;
+      --accent: #00d4ff;
+      --text-primary: #e6f1ff;
+      --text-secondary: #8892b0;
+      --border: #1d3557;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--deep-blue);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+    header {
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 22, 40, 0.95);
+    }
+    .brand {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 4px;
+      color: var(--ice);
+    }
+    .page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      color: var(--accent);
+    }
+    .figma-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #F24E1E;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .figma-badge:hover { opacity: 0.85; }
+    .figma-badge svg { width: 18px; height: 18px; }
+    main { padding: 3rem 4rem; }
+    .embed-header {
+      margin-bottom: 1.5rem;
+    }
+    .embed-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 0.5rem;
+    }
+    .embed-header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .embed-container {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--mid-blue);
+    }
+    .embed-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 600px;
+      gap: 1.5rem;
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 2rem;
+    }
+    .embed-placeholder .icon {
+      font-size: 4rem;
+    }
+    .embed-placeholder h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: var(--text-primary);
+    }
+    .embed-placeholder p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 480px;
+    }
+    .embed-placeholder code {
+      background: var(--deep-blue);
+      border: 1px solid var(--border);
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      display: block;
+      width: 100%;
+      max-width: 520px;
+      word-break: break-all;
+    }
+    /*
+      TO ACTIVATE: Replace the .embed-placeholder div with this iframe:
+
+      <iframe
+        style="border: none; display: block;"
+        width="100%"
+        height="800"
+        src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/YOUR_FILE_KEY/Beyond-The-Wall"
+        allowfullscreen>
+      </iframe>
+    */
+    .tokens-section {
+      margin-top: 3rem;
+    }
+    .tokens-section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .token-grid {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .token-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--mid-blue);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+    }
+    .token-swatch {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .token-name { color: var(--text-secondary); font-size: 0.75rem; }
+    .token-value { color: var(--text-primary); font-weight: 600; }
+    footer {
+      margin-top: 4rem;
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="brand">DARKLAB</span>
+    <span class="page-title">DESIGN PREVIEW</span>
+    <a class="figma-badge" href="https://www.figma.com/file/YOUR_FILE_KEY/Beyond-The-Wall" target="_blank">
+      <svg viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19 28.5C19 25.46 21.46 23 24.5 23C27.54 23 30 25.46 30 28.5C30 31.54 27.54 34 24.5 34C21.46 34 19 31.54 19 28.5Z" fill="white"/>
+        <path d="M8 47.5C8 44.46 10.46 42 13.5 42H19V47.5C19 50.54 16.54 53 13.5 53C10.46 53 8 50.54 8 47.5Z" fill="white"/>
+        <path d="M19 4V23H24.5C27.54 23 30 20.54 30 17.5C30 14.46 27.54 12 24.5 12H19V4Z" fill="white"/>
+        <path d="M8 17.5C8 20.54 10.46 23 13.5 23H19V12H13.5C10.46 12 8 14.46 8 17.5Z" fill="white"/>
+        <path d="M8 28.5C8 31.54 10.46 34 13.5 34H19V23H13.5C10.46 23 8 25.46 8 28.5Z" fill="white"/>
+      </svg>
+      OPEN IN FIGMA
+    </a>
+  </header>
+
+  <main>
+    <div class="embed-header">
+      <h1>BEYOND THE WALL</h1>
+      <p>DarkLab design file — storefront, hoodie mockups, social templates, and design system.</p>
+    </div>
+
+    <div class="embed-container">
+      <div class="embed-placeholder">
+        <div class="icon">🎨</div>
+        <h2>FIGMA FILE NOT YET LINKED</h2>
+        <p>To activate the live embed, replace <strong>YOUR_FILE_KEY</strong> in this file with your Figma file key, then swap the placeholder div for the iframe in the CSS comment above.</p>
+        <code>https://www.figma.com/file/YOUR_FILE_KEY/Beyond-The-Wall</code>
+        <p style="font-size:0.8rem;">See <strong>FIGMA.md</strong> in the repo root for full instructions.</p>
+      </div>
+    </div>
+
+    <div class="tokens-section">
+      <h2>DARKLAB DESIGN TOKENS</h2>
+      <div class="token-grid">
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#a8d8ea"></div>
+          <div><div class="token-name">--ice</div><div class="token-value">#a8d8ea</div></div>
+        </div>
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#0a1628"></div>
+          <div><div class="token-name">--deep-blue</div><div class="token-value">#0a1628</div></div>
+        </div>
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#112240"></div>
+          <div><div class="token-name">--mid-blue</div><div class="token-value">#112240</div></div>
+        </div>
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#00d4ff"></div>
+          <div><div class="token-name">--accent</div><div class="token-value">#00d4ff</div></div>
+        </div>
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#e6f1ff"></div>
+          <div><div class="token-name">--text-primary</div><div class="token-value">#e6f1ff</div></div>
+        </div>
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#1d3557"></div>
+          <div><div class="token-name">--border</div><div class="token-value">#1d3557</div></div>
+        </div>
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#ff4757"></div>
+          <div><div class="token-name">--danger</div><div class="token-value">#ff4757</div></div>
+        </div>
+        <div class="token-chip">
+          <div class="token-swatch" style="background:#2ed573"></div>
+          <div><div class="token-name">--success</div><div class="token-value">#2ed573</div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>DARKLAB // PROD.ABYSM // 2026</footer>
+
+</body>
+</html>
