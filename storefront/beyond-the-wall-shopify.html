@@ -1,0 +1,198 @@
+<!-- DARKLAB — BEYOND THE WALL — SHOPIFY LANDING PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond The Wall Hoodie | DarkLab | Prod.Abysm</title>
+  <meta name="description" content="Explore the hidden realms. Premium hoodie featuring the lost cartography of Atlantis, Lemuria, and the ice walls beyond. Limited edition.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="beyond-the-wall.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">DARKLAB</div>
+    <div class="nav-links">
+      <a href="#product">Shop</a>
+      <a href="#map">The Map</a>
+      <a href="#details">Details</a>
+    </div>
+    <div class="nav-cart" id="cartIcon" onclick="scrollToProduct()">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-label">DARKLAB // LIMITED EDITION</p>
+      <h1 class="hero-title">BEYOND<br>THE WALL</h1>
+      <p class="hero-tagline">The world they hid from you.</p>
+      <div class="hero-actions">
+        <button class="btn-primary btn-large" onclick="scrollToProduct()">SHOP NOW — $89</button>
+        <button class="btn-secondary btn-large" onclick="scrollToMap()">VIEW THE MAP</button>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SECTION -->
+  <section class="product-section" id="product">
+    <div class="product-container">
+      <div class="product-gallery">
+        <div class="main-image">
+          <img id="mainImage" src="hoodie-mockup.jpg" alt="Beyond The Wall Hoodie">
+        </div>
+        <div class="thumbnail-row">
+          <div class="thumb active" onclick="swapImage(0)"><img src="hoodie-mockup.jpg" alt="Front"></div>
+          <div class="thumb" onclick="swapImage(1)"><img src="map-detail.jpg" alt="Map Detail"></div>
+          <div class="thumb" onclick="swapImage(2)"><img src="hoodie-close.jpg" alt="Close-up"></div>
+        </div>
+      </div>
+
+      <div class="product-info">
+        <span class="product-badge">LIMITED EDITION</span>
+        <h2 class="product-name">BEYOND<br>THE WALL</h2>
+        <p class="product-subtitle">Premium All-Over-Print Hoodie</p>
+
+        <div class="product-price">
+          <span class="current-price">$89.00</span>
+          <span class="compare-price">$120.00</span>
+          <span class="discount-badge">SAVE 26%</span>
+        </div>
+
+        <p class="product-description">
+          Beyond the ice. Beyond the walls. Beyond everything they taught you about our world.
+          This isn't just a design — it's a question. A reminder that the edge of the map
+          was never the edge of the world.
+        </p>
+
+        <div class="size-selector">
+          <label>SIZE</label>
+          <div class="size-options">
+            <button class="size-btn" data-size="S">S</button>
+            <button class="size-btn" data-size="M">M</button>
+            <button class="size-btn active" data-size="L">L</button>
+            <button class="size-btn" data-size="XL">XL</button>
+            <button class="size-btn" data-size="2XL">2XL</button>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <div class="quantity-selector">
+            <button onclick="updateQty(-1)">−</button>
+            <input type="number" id="qtyInput" value="1" min="1" max="5" readonly>
+            <button onclick="updateQty(1)">+</button>
+          </div>
+          <button class="btn-primary btn-add-cart" onclick="addToCart()">ADD TO CART</button>
+        </div>
+
+        <div class="urgency-bar">
+          <div class="urgency-text">
+            <div class="pulse"></div>
+            <span>72% of this batch already claimed</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 72%"></div>
+          </div>
+          <p class="urgency-note">When this batch is gone, it's archived. No reprints.</p>
+        </div>
+
+        <div class="product-meta">
+          <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Free shipping over $75
+          </div>
+          <div class="meta-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Secure checkout
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section" id="map">
+    <div class="map-header">
+      <h2 class="section-title">THE REALMS THEY ERASED</h2>
+      <p class="section-subtitle">The lost cartography of the outer world.</p>
+    </div>
+    <div class="map-container">
+      <img class="map-image" src="map-detail.jpg" alt="Beyond The Wall Map">
+      <div class="realm-markers">
+        <div class="realm-marker" style="top:12%; left:50%">
+          <div class="marker-dot"></div>
+          <div class="marker-label">ATLANTIS</div>
+          <div class="marker-card"><h4>Atlantis</h4><p>The crown jewel. The civilization that vanished without a trace — or did it?</p></div>
+        </div>
+        <div class="realm-marker" style="top:30%; left:15%">
+          <div class="marker-dot"></div>
+          <div class="marker-label">LEMURIA</div>
+          <div class="marker-card"><h4>Lemuria</h4><p>Rising from the western waters. The motherland of the Pacific mystery.</p></div>
+        </div>
+        <div class="realm-marker" style="top:28%; left:82%">
+          <div class="marker-dot"></div>
+          <div class="marker-label">MEROPIS</div>
+          <div class="marker-card"><h4>Meropis Lands</h4><p>Beyond the eastern ice. The frontier that no modern expedition has reached.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS SECTION -->
+  <section class="details-section" id="details">
+    <div class="details-grid">
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>PREMIUM FABRIC</h3>
+        <p>Ultra-soft polyester engineered for vivid sublimation. Every color pops. Every detail holds.</p>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+        </div>
+        <h3>FULL COVERAGE</h3>
+        <p>The map wraps front, back, and sleeves. No blank space. No shortcuts.</p>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>ARCHIVE ONLY</h3>
+        <p>This design will not be reprinted. Once the batch sells out, it enters the DarkLab archive forever.</p>
+      </div>
+      <div class="detail-card">
+        <div class="detail-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <h3>TRUE TO SIZE</h3>
+        <p>Relaxed cut, true-to-size. Size up for an oversized streetwear silhouette.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="footer-cta">
+    <h2>THE MAP IS REAL.<br>ARE YOU READY?</h2>
+    <p>Limited production run. Once these are gone, they're gone.</p>
+    <button class="btn-primary btn-large" onclick="scrollToProduct()">SHOP BEYOND THE WALL — $89</button>
+    <p class="footer-brand">DARKLAB // PROD.ABYSM // 2026</p>
+  </section>
+
+  <script src="beyond-the-wall.js"></script>
+</body>
+</html>
